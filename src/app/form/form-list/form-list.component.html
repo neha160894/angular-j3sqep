@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-success" (click)="onNewForm()">New Form</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <form-item 
+            *ngFor="let formEl of form; let i = index"
+            [form]="formEl"
+            [index]="i"></form-item>
+    </div>
+</div>

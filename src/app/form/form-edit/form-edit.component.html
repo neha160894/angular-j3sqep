@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6 offset-md-3">
+        <!-- <button 
+            type="submit" 
+            class="btn btn-success" 
+            (click)="onEdit()" [disabled]="editForm">{{ isEditing ? 'Edit' : 'Editing...'}}</button> -->
+        <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+          <div>
+            <button 
+                type="submit" 
+                class="btn btn-primary"
+                [disabled]="!inputForm.valid">Save</button>
+                <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input 
+                    type="text"
+                    id="name"
+                    formControlName="name"
+                    class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input 
+                    type="number"
+                    id="number"
+                    class="form-control"
+                    formControlName="mobile">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <textarea 
+                    type="text"
+                    id="address"
+                    class="form-control"
+                    formControlName="address"
+                    rows="6"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
