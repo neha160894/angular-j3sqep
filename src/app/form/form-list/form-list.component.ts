@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { Form } from './form.model';
+import { Form } from '../form.model';
 import { FormService } from '../form.service';
 
 @Component({
@@ -18,12 +18,12 @@ export class FormListComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute) {}
 
   ngOnInit() {
-      this.subscription = this.formService.formChanged
-          .subscribe(
-              (form: Form[]) => {
-                  this.form = form;
-              }
-          );
+      this.subscription = this.formService.formchanged
+        .subscribe(
+            (form: Form[]) => {
+                this.form = form;
+            }
+        );
       this.form = this.formService.getForms();
   }
 

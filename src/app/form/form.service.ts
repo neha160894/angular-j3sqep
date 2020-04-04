@@ -6,8 +6,9 @@ import { Form } from './form.model'
 export class FormService {
   formchanged = new Subject<Form[]>();
 
-  private form : Form[] = [
-    new Form('Neha', 837598, 'Sadar')]
+   private form : Form[] = [
+     new Form('Neha', 837598, 'Sadar')]
+  //private form : Form[] = [];
 
   setForms(form: Form[]) {
     this.form = form;
@@ -22,12 +23,12 @@ export class FormService {
     return this.form[index];
   }
 
-  addForm(form: Form[]) {
-    this.form.push(this.form);
+  addForm(form: Form) {
+    this.form.push(form);
     this.formchanged.next(this.form.slice());
   }
 
-  updateForm(index:number, newForm: Form[]) {
+  updateForm(index:number, newForm: Form) {
     this.form[index] = newForm;
     this.formchanged.next(this.form.slice());
   }

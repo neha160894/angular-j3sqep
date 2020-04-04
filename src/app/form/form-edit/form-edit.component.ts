@@ -50,7 +50,7 @@ export class FormEditComponent {
         if(this.editMode) {
             const form = this.formService.getForm(this.id);
             formName = form.name;
-            formMobile = form.mobileNo;
+            formMobile = form.mobile;
             formAddress = form.address;
         }
         this.inputForm = new FormGroup({

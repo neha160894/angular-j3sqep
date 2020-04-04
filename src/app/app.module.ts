@@ -22,7 +22,7 @@ const appRoutes = [
   children: [
     {path: '', component: FormStartComponent},
     {path: 'new', component: FormEditComponent},
-    {path: ':id', component: FormEditComponent},
+    {path: ':id', component: FormDetailComponent},
     {path: ':id/edit', component: FormEditComponent}
   ]}
 ]
